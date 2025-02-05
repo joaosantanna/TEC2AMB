@@ -20,4 +20,7 @@ while True:
         break
     if botao == "Processar":
         print(f"botao:{botao} - valores:{valores}")
-        janela[2].update("9876-0011")
+        janela[2].update("9876-0011")  # exemplo de como atualizar um valor
+        # na interface grafica
+
+janela.close()
