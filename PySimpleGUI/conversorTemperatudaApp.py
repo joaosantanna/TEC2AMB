@@ -4,7 +4,7 @@ import PySimpleGUI as sg
 sg.theme("LightGrey1")  # Add a touch of color
 
 layout = [
-    [sg.Text("Conversor de temperatura - Celsius x Fahrenheit", font=("Currier", 18))],
+    [sg.Text("Conversor - Celsius x Fahrenheit", font=("Currier", 16))],
     [
         sg.Text("Valor"),
         sg.InputText(key="-VALOR-", size=(6, 1)),
