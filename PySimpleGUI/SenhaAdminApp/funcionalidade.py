@@ -1,29 +1,24 @@
 import string
-import random
+from random import choices
 
 
-def gerar_senha(tamanho, usar_maiusculas, usar_minusculas, usar_numeros, usar_simbolos):
+def gerar_senha(tamanho, maiusculas, minusculas, numeros, simbolos):
     caracteres = ""
-    if usar_maiusculas:
+
+    if maiusculas:
         caracteres += string.ascii_uppercase
-    if usar_minusculas:
+    if minusculas:
         caracteres += string.ascii_lowercase
-    if usar_numeros:
+    if numeros:
         caracteres += string.digits
-    if usar_simbolos:
+    if simbolos:
         caracteres += string.punctuation
+    letras = choices(caracteres, k=tamanho)
 
-    # print(caracteres) # visualizar os caracteres que serão usados
-
-    if not caracteres:  # se nada for escolhido caracteres será vazio
-        return ""
-
-    senha = ""
-    for i in range(tamanho):
-        senha += random.choice(caracteres)
-
+    senha = "".join(letras)
     return senha
 
 
 if __name__ == "__main__":
-    print(gerar_senha(10, True, True, True, True))
+    print(gerar_senha(8, True, True, True, False))
+    print(gerar_senha(30, True, True, True, False))
